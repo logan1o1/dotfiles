@@ -1,0 +1,23 @@
+[Default Applications]
+x-scheme-handler/http=userapp-Zen-GSNPP3.desktop
+x-scheme-handler/https=userapp-Zen-GSNPP3.desktop
+x-scheme-handler/chrome=userapp-Zen-GSNPP3.desktop
+text/html=userapp-Zen-GSNPP3.desktop
+application/x-extension-htm=userapp-Zen-GSNPP3.desktop
+application/x-extension-html=userapp-Zen-GSNPP3.desktop
+application/x-extension-shtml=userapp-Zen-GSNPP3.desktop
+application/xhtml+xml=userapp-Zen-GSNPP3.desktop
+application/x-extension-xhtml=userapp-Zen-GSNPP3.desktop
+application/x-extension-xht=userapp-Zen-GSNPP3.desktop
+
+[Added Associations]
+x-scheme-handler/http=userapp-Zen-GSNPP3.desktop;userapp-Zen-5J2AP3.desktop;
+x-scheme-handler/https=userapp-Zen-GSNPP3.desktop;userapp-Zen-5J2AP3.desktop;
+x-scheme-handler/chrome=userapp-Zen-GSNPP3.desktop;userapp-Zen-5J2AP3.desktop;
+text/html=userapp-Zen-5J2AP3.desktop;userapp-Zen-GSNPP3.desktop;
+application/x-extension-htm=userapp-Zen-5J2AP3.desktop;userapp-Zen-GSNPP3.desktop;
+application/x-extension-html=userapp-Zen-5J2AP3.desktop;userapp-Zen-GSNPP3.desktop;
+application/x-extension-shtml=userapp-Zen-5J2AP3.desktop;userapp-Zen-GSNPP3.desktop;
+application/xhtml+xml=userapp-Zen-5J2AP3.desktop;userapp-Zen-GSNPP3.desktop;
+application/x-extension-xhtml=userapp-Zen-5J2AP3.desktop;userapp-Zen-GSNPP3.desktop;
+application/x-extension-xht=userapp-Zen-5J2AP3.desktop;userapp-Zen-GSNPP3.desktop;
