@@ -1,5 +1,4 @@
-theme = noctalia
-
+theme = TokyoNight
 keybind = ctrl+shift+d=new_split:right
 keybind = ctrl+shift+s=new_split:down
 keybind = ctrl+shift+w=close_surface
