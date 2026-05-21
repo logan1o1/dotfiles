@@ -11,5 +11,6 @@ keybind = alt+j=goto_split:down
 adjust-cell-width = 0
 adjust-cell-height = 0
 
+shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = true

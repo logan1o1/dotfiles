@@ -1,0 +1,18 @@
+vim.keymap.set("i", "<C-j>", "<CR>")
+
+
+vim.keymap.set("n", "<Leader><Leader>x", "<cmd>source %<CR>")
+
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
+
+vim.keymap.set("n", "<C-o>", ":Oil --float<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>r", ":bd!<CR>")
+
+vim.keymap.set("n", "<C-t>", function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 15)
+end)
+
