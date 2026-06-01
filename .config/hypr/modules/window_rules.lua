@@ -38,3 +38,22 @@ hl.window_rule({
         move  = "20 monitor_h-120",
         float = true,
 })
+
+
+hl.window_rule({
+        name = "org.pulseaudio.pavucontrol",
+        match = { class = "org.pulseaudio.pavucontrol" },
+        float = true,
+        size = "500 600",
+        move = "1030 35",
+        pin = true
+})
+
+hl.window_rule({
+        name = "dev.noctalia.noctalia-qs",
+        match = { class = "dev.noctalia.noctalia-qs" },
+        float = true,
+        size = "500 550",
+        move = "1030 35",
+        pin = true
+})

@@ -42,8 +42,8 @@
                 "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
                 "tooltip-format-disconnected": "Disconnected",
                 "max-length": 50,
-                "on-click": "~/.config/rofi/wifi/wifi.sh &",
-                "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
+                "on-click": "qs -p ~/.config/quickshell_custom_pannels/wifi.qml &",
+                "on-click-right": "qs -p ~/.config/quickshell_custom_pannels/wifi.qml &",
                 "interval": 5,
         },
         "custom/spotify": {
@@ -61,7 +61,7 @@
                 "on-click": "playerctl play-pause",
                 "on-scroll-up": "playerctl previous",
                 "on-scroll-down": "playerctl next",
-                "max-length": 27
+                "max-length": 35
         },
         "hyprland/workspaces": {
                 "on-click": "activate",
