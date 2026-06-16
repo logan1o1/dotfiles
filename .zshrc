@@ -8,7 +8,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-#Key binding
+# Key binding
 bindkey '^y' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -37,23 +37,38 @@ else
   export EDITOR='nvim'
 fi
 
+# Emit OSC 7
+if [[ -n "$NVIM" ]]; then
+  function print_osc7() {
+    printf '\033]7;file://%s\033\\' "$PWD"
+  }
+  autoload -Uz add-zsh-hook
+  add-zsh-hook precmd print_osc7
+fi
+
 # Paths
+export AUTH_CLIENT_ID=a765f971fbe94ccb9ba7b7c2d5d5e7bd
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
 export STARSHIP_CONFIG=~/.config/starship.toml
+export PATH="$PATH:~/.spicetify"
+export PATH="$PATH:/home/lucifer/.local/bin"
 
+# Aliases
 alias cd='z'
+alias ff='fastfetch'
 
 # Initialization
 eval "$(starship init zsh)"
 eval "$(rbenv init -)"
 eval "$(zoxide init zsh)"
-eval `ssh-agent -s`
+eval $(ssh-agent -s) > /dev/null
 
-ssh-add ~/.ssh/github_key
+ssh-add ~/.ssh/github_key > /dev/null 2>&1

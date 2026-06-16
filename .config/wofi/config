@@ -1,5 +1,8 @@
 allow_images=true
 no_actions=true
 hide_scroll=true
+key_up=Alt-k
+key_down=Alt-j
+key_submit=Alt-n
 width=45%
 height=40%

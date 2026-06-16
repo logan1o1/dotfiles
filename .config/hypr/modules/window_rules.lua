@@ -57,3 +57,11 @@ hl.window_rule({
         move = "1030 35",
         pin = true
 })
+
+hl.window_rule({
+        name = "wall-paper-picker",
+        match = { class = "wallpicker" },
+        fullscreen = true,
+        center = true,
+        stay_focused = true,
+})

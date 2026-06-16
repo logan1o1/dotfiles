@@ -1,3 +1,6 @@
+@import url("/home/lucifer/.config/waybar/colors.css");
+
+
 * {
         min-height: 0;
         min-width: 0;
@@ -14,7 +17,8 @@ window#waybar {
 
 #custom-launcher {
         background: #1e1e2e;
-        color: #89b4fa;
+        color: @primary;
+        /* color: #89b4fa; */
         font-size: 16px;
         font-weight: bold;
 }
@@ -42,7 +46,8 @@ window#waybar {
 
 #workspaces button.active {
         background-color: #1e1e2e;
-        color: #74c7ec;
+        color: @primary;
+        /* color: #74c7ec; */
 }
 
 #workspaces button.urgent {
@@ -52,7 +57,8 @@ window#waybar {
 
 #network {
         background: #1e1e2e;
-        color: #a6e3a1;
+        color: @primary;
+        /* color: #a6e3a1; */
 }
 
 #network.disconnected {
@@ -65,15 +71,16 @@ window#waybar {
 
 #temperature {
         background: #1e1e2e;
-        color: #74c7ec;
+        color: @primary;
+        /* color: #74c7ec; */
 }
 
 #temperature.warning {
-        color: #fab387;
+        color: @error;
 }
 
 #temperature.critical {
-        color: #f38ba8;
+        color: @error_container
 }
 
 #custom-launcher,
@@ -99,11 +106,13 @@ window#waybar {
 }
 
 #mpris.playing {
-        color: #a6e3a1;
+        color: @primary;
+        /* color: #a6e3a1; */
 }
 
 #mpris.paused {
-        color: #9399b2;
+        color: @secondary;
+        /* color: #9399b2; */
 }
 
 #custom-sep {
@@ -116,19 +125,17 @@ window#waybar.empty #window {
 }
 
 #cpu {
-        color: #94e2d5;
+        color: @primary;
+        /* color: #94e2d5; */
 }
 
 #memory {
-        color: #cba6f7;
+        color: @primary;
+        /* color: #cba6f7; */
 }
 
 #clock {
-        color: #89b4fa;
-}
-
-#clock.simpleclock {
-        color: #74c7ec;
+        color: @primary;
 }
 
 #window {
@@ -136,7 +143,7 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-        color: #b4befe;
+        color: @primary;
 }
 
 
@@ -145,7 +152,7 @@ window#waybar.empty #window {
 }
 
 #custom-logo {
-        color: #89b4fa;
+        color: @primary;
 }
 
 #custom-power {
@@ -154,7 +161,7 @@ window#waybar.empty #window {
 
 #battery {
         background-color: #1e1e2e;
-        color: #fab387;
+        color: @primary;
 }
 
 #battery.warning,
@@ -171,5 +178,6 @@ window#waybar.empty #window {
 
 tooltip {
         background-color: #181825;
-        border: 2px solid #89b4fa;
+        border: 2px solid @primary;
+        /* border: 2px solid #89b4fa; */
 }
