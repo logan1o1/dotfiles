@@ -1,7 +1,7 @@
-/*style_1*/
+@import url("/home/lucifer/.config/wofi/colors.css");
 
 * {
-        font-family: "Font Awesome 5 Free", Roboto, Helvetica, Arial, sans-serif;
+        font-family: "JetBrainMono NF";
         font-size: 14px;
         border: none;
         border-radius: 0;
@@ -12,25 +12,25 @@
 }
 
 #outer-box {
-        background-color: #282c34;
+        background-color: @background;
         border-radius: 14px;
-        border: 1px solid #61afef;
+        border: 1px solid @primary;
         margin: 10px;
         padding: 15px;
 }
 
 #input {
-        background-color: #1e222a;
-        color: #abb2bf;
+        background-color: @on_primary;
+        color: @tertiary;
         padding: 8px 12px;
         margin-bottom: 10px;
         border-radius: 8px;
-        border: 1px solid transparent;
+        border: 1px solid @primary;
         transition: border-color 0.3s ease;
 }
 
 #input:focus {
-        border-color: #61afef;
+        border-color: @primary;
 }
 
 #scroll {
@@ -45,7 +45,7 @@
 }
 
 #entry:selected {
-        background-color: #61afef;
+        background-color: @primary;
         font-weight: bold;
 }
 
