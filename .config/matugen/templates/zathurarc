@@ -1,0 +1,25 @@
+# Colors
+set default-bg "{{colors.surface.default.hex}}"
+set default-fg "{{colors.on_surface.default.hex}}"
+
+set statusbar-bg "{{colors.secondary_container.default.hex}}"
+set statusbar-fg "{{colors.on_secondary_container.default.hex}}"
+
+set inputbar-bg "{{colors.tertiary_container.default.hex}}"
+set inputbar-fg "{{colors.on_tertiary_container.default.hex}}"
+
+set highlight-color "{{colors.primary_container.default.hex}}"
+set highlight-active-color "{{colors.primary.default.hex}}"
+
+# Window settings
+set font "Iosevka NF"
+set window-height 1029
+set window-width 973
+# set show-scrollbar "true"
+set selection-clipboard clipboard
+
+# Keymaps
+map K zoom in
+map J zoom out
+map H navigate previous
+map L navigate next

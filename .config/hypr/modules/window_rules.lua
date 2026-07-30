@@ -39,7 +39,6 @@ hl.window_rule({
         float = true,
 })
 
-
 hl.window_rule({
         name = "org.pulseaudio.pavucontrol",
         match = { class = "org.pulseaudio.pavucontrol" },
@@ -50,18 +49,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
-        name = "dev.noctalia.noctalia-qs",
-        match = { class = "dev.noctalia.noctalia-qs" },
+        name = "wifitui",
+        match = { title = "wifitui" },
         float = true,
-        size = "500 550",
+        size = "500 600",
         move = "1030 35",
         pin = true
 })
 
-hl.window_rule({
-        name = "wall-paper-picker",
-        match = { class = "wallpicker" },
-        fullscreen = true,
-        center = true,
-        stay_focused = true,
-})

@@ -1,0 +1,69 @@
+{
+        "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+        "logo": {
+                "source": "~/.config/fastfetch/arch.txt",
+                "padding": {
+                        "top": 2,
+                        "right": 6
+                }
+        },
+        "display": {
+                "separator": " "
+        },
+        "modules": [
+                "break",
+                "break",
+                {
+                        "type": "title",
+                        "keyWidth": 10
+                },
+                "break",
+                {
+                        "type": "os",
+                        "key": " ",
+                        "keyColor": "{{colors.primary.default.hex}}",
+                        "format": "Arch Linux x86_64"
+                },
+                {
+                        "type": "command",
+                        "key": " ",
+                        "keyColor": "{{colors.primary.default.hex}}",
+                        "text": "uname -sr | sed 's/-cachyos/-arch1-1/'"
+                },
+                {
+                        "type": "packages",
+                        "format": "{} (pacman)",
+                        "key": " ",
+                        "keyColor": "{{colors.primary.default.hex}}"
+                },
+                {
+                        "type": "shell",
+                        "key": " ",
+                        "keyColor": "{{colors.primary.default.hex}}"
+                },
+                {
+                        "type": "terminal",
+                        "key": " ",
+                        "keyColor": "{{colors.primary.default.hex}}"
+                },
+                {
+                        "type": "wm",
+                        "key": " ",
+                        "keyColor": "{{colors.primary.default.hex}}"
+                },
+                {
+                        "type": "uptime",
+                        "key": " ",
+                        "keyColor": "{{colors.primary.default.hex}}"
+                },
+                {
+                        "type": "disk",
+                        "key": " ",
+                        "keyColor": "{{colors.primary.default.hex}}"
+                },
+                "break",
+                "colors",
+                "break",
+                "break"
+        ]
+}

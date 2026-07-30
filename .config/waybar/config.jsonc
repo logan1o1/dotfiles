@@ -42,9 +42,9 @@
                 "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
                 "tooltip-format-disconnected": "Disconnected",
                 "max-length": 50,
-                "on-click": "qs -p ~/.config/quickshell_custom_pannels/wifi.qml &",
-                "on-click-right": "qs -p ~/.config/quickshell_custom_pannels/wifi.qml &",
+                "on-click": "ghostty --title=wifitui -e wifitui",
                 "interval": 5,
+                // "on-click": "qs -p ~/.config/quickshell_custom_pannels/wifi.qml &",
         },
         "custom/spotify": {
                 "format": "  {}",
