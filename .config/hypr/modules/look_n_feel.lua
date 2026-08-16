@@ -1,3 +1,5 @@
+local colors = require("modules.generated_colors")
+
 hl.config(
         {
                 general    = {
@@ -5,8 +7,8 @@ hl.config(
                         gaps_out = 3,
                         border_size = 2,
                         col = {
-                                active_border = "rgba(33ccffee)",
-                                inactive_border = "rgba(595959aa)",
+                                active_border = colors.primary,
+                                inactive_border = colors.secondary,
                         },
                         resize_on_border = true,
                         allow_tearing = true,
@@ -21,7 +23,8 @@ hl.config(
                                 enabled = true,
                                 range = 4,
                                 render_power = 3,
-                                color = "rgba(1a1a1aee)",
+                                color = colors.shadow
+                                -- color = "rgba(1a1a1aee)",
                         },
                         blur = {
                                 enabled = true,

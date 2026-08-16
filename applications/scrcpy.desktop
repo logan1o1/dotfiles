@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Zen
+Type=Application
+NoDisplay=false
+Exec=/home/lucifer/tarballs/scrcpy-linux-x86_64-v3.3.4/scrcpy %u
+Icon=/home/lucifer/tarballs/scrcpy-linux-x86_64-v3.3.4/icon.png
+Comment=Custom definition for Scrcpy

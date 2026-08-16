@@ -4,14 +4,15 @@ add_newline = false
 palette = "matugen"
 
 format = """
-[  ](fg:block1_fg bg:block1_bg)\
-[](fg:block1_bg bg:accent)\
+[  ](bg:block1_bg fg:block1_fg)\
+[](bg:accent fg:block1_bg)\
 $directory\
 [](fg:accent bg:block2_bg)\
 $git_branch\
 $git_status\
 [](fg:block2_bg bg:block3_bg)\
 $nodejs\
+$bun\
 $rust\
 $golang\
 $php\
@@ -37,15 +38,20 @@ $elixir\
 [ ](fg:block4_bg)\
 \n$character"""
 
+[character]
+success_symbol = "[❯](bold fg:accent)"
+error_symbol = "[❯](bold fg:red)"
+vimcmd_symbol = "[❮](bold fg:accent)"
+
 # Matugen dynamically injects Material You colors into these variables
 [palettes.matugen]
-block1_bg = '#174974'
-block1_fg = '#d1e4ff'
-accent    = '#9fcafc'
-accent_fg = '#003257'
-block2_bg = '#42474e'
+block1_bg = '#224876'
+block1_fg = '#d4e3ff'
+accent    = '#a6c8ff'
+accent_fg = '#01315e'
+block2_bg = '#43474e'
 block3_bg = '#1d2024'
-block4_bg = '#101418'
+block4_bg = '#111318'
 
 [directory]
 style = "fg:accent_fg bg:accent"
@@ -69,22 +75,27 @@ style = "bg:block2_bg"
 format = '[[($all_status$ahead_behind )](fg:accent bg:block2_bg)]($style)'
 
 [nodejs]
-symbol = " "
+symbol = ""
 style = "bg:block3_bg"
 format = '[[ $symbol ($version) ](fg:accent bg:block3_bg)]($style)'
 
 [rust]
-symbol = " "
+symbol = ""
 style = "bg:block3_bg"
 format = '[[ $symbol ($version) ](fg:accent bg:block3_bg)]($style)'
 
 [golang]
-symbol = " "
+symbol = ""
 style = "bg:block3_bg"
 format = '[[ $symbol ($version) ](fg:accent bg:block3_bg)]($style)'
 
 [php]
-symbol = " "
+symbol = ""
+style = "bg:block3_bg"
+format = '[[ $symbol ($version) ](fg:accent bg:block3_bg)]($style)'
+
+[bun]
+symbol = " "
 style = "bg:block3_bg"
 format = '[[ $symbol ($version) ](fg:accent bg:block3_bg)]($style)'
 

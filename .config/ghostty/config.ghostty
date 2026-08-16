@@ -1,4 +1,23 @@
-theme = TokyoNight
+background = #111318
+foreground = #e1e2e9
+cursor-color = #a6c8ff
+cursor-text = #01315e
+selection-background = #3d4758
+selection-foreground = #d8e3f8
+
+split-divider-color = #a6c8ff
+
+custom-shader = shaders/cursor_warp.glsl
+
+shell-integration = "zsh"
+
+font-family = "Iosevka NF"
+
+copy-on-select = true
+
+keybind = ctrl+shift+k=scroll_page_up
+keybind = ctrl+shift+j=scroll_page_down
+
 keybind = ctrl+shift+d=new_split:right
 keybind = ctrl+shift+s=new_split:down
 keybind = ctrl+shift+w=close_surface
@@ -8,8 +27,16 @@ keybind = alt+l=goto_split:right
 keybind = alt+k=goto_split:up
 keybind = alt+j=goto_split:down
 
+keybind = alt+h=unbind
+keybind = alt+l=unbind
+keybind = alt+k=unbind
+keybind = alt+j=unbind
+
 adjust-cell-width = 0
 adjust-cell-height = 0
+
+window-padding-y = 0,0
+window-padding-x = 0,0
 
 shell-integration-features = no-cursor
 cursor-style = block

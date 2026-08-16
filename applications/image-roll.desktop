@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=image-roll
+Type=Application
+NoDisplay=false
+Exec=image-roll %u
+Icon=/home/lucifer/dotfiles/icons/com.github.weclaw1.ImageRoll.png
+Comment=Custom definition for image-roll

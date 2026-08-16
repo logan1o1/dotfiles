@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=dgop
+Type=Application
+NoDisplay=false
+Exec=dgop %u
+Terminal=true
+Icon=/home/lucifer/dotfiles/icons/dgop.png
+Comment=Custom definition for dgop
