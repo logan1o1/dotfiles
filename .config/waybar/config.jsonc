@@ -11,7 +11,8 @@
                 "custom/launcher",
                 "hyprland/workspaces",
                 // "hyprland/window",
-                "mpris"
+                "mpris",
+                "custom/media-switcher"
         ],
         "modules-center": [
                 "clock"
@@ -24,7 +25,7 @@
                 "network",
                 "pulseaudio",
                 "battery",
-                "custom/notification",
+                // "custom/notification",
                 "custom/power",
         ],
         "custom/launcher": {
@@ -62,6 +63,13 @@
                 "on-scroll-up": "playerctl previous",
                 "on-scroll-down": "playerctl next",
                 "max-length": 35
+        },
+        "custom/media-switcher": {
+                // "format": "",
+                "exec": "~/dotfiles/.config/waybar/scripts/media_switcher.sh",
+                "on-click": "playerctld shift",
+                "interval": 3,
+                "tooltip": true
         },
         "hyprland/workspaces": {
                 "on-click": "activate",

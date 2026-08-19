@@ -98,6 +98,7 @@ window#waybar {
 #tray,
 #memory,
 #window,
+#custom-media-switcher,
 #mpris {
         padding: 0.15rem 0.6rem;
         margin: 0.15rem 0.25rem;
@@ -113,6 +114,10 @@ window#waybar {
 #mpris.paused {
         color: @secondary;
         /* color: #9399b2; */
+}
+
+#custom-media-switcher {
+        color: @primary;
 }
 
 #custom-sep {
