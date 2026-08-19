@@ -1,9 +1,9 @@
 [Desktop Entry]
 Encoding=UTF-8
 Version=1.0
-Name=Zen
+Name=Telegram
 Type=Application
 NoDisplay=false
 Exec=/home/lucifer/tarballs/Telegram/Telegram %u
 Icon=/home/lucifer/dotfiles/icons/telegram.png
-Comment=Custom definition for Zen
+Comment=Custom definition for Telegram

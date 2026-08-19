@@ -21,50 +21,45 @@
                 {
                         "type": "os",
                         "key": " ",
-                        "keyColor": "#a3c9fe",
+                        "keyColor": "#aac7ff",
                         "format": "Arch Linux x86_64"
                 },
                 {
-                        "type": "kernel",
+                        "type": "command",
                         "key": " ",
-                        "keyColor": "#a3c9fe",
+                        "keyColor": "#aac7ff",
+                        "text": "uname -sr | sed 's/-cachyos/-arch1-1/'"
                 },
-                // {
-                //         "type": "command",
-                //         "key": " ",
-                //         "keyColor": "#a3c9fe",
-                //         "text": "uname -sr | sed 's/-cachyos/-arch1-1/'"
-                // },
                 {
                         "type": "packages",
                         "format": "{} (pacman)",
                         "key": " ",
-                        "keyColor": "#a3c9fe"
+                        "keyColor": "#aac7ff"
                 },
                 {
                         "type": "shell",
                         "key": " ",
-                        "keyColor": "#a3c9fe"
+                        "keyColor": "#aac7ff"
                 },
                 {
                         "type": "terminal",
                         "key": " ",
-                        "keyColor": "#a3c9fe"
+                        "keyColor": "#aac7ff"
                 },
                 {
                         "type": "wm",
                         "key": " ",
-                        "keyColor": "#a3c9fe"
+                        "keyColor": "#aac7ff"
                 },
                 {
                         "type": "uptime",
                         "key": " ",
-                        "keyColor": "#a3c9fe"
+                        "keyColor": "#aac7ff"
                 },
                 {
                         "type": "disk",
                         "key": " ",
-                        "keyColor": "#a3c9fe"
+                        "keyColor": "#aac7ff"
                 },
                 "break",
                 "colors",
