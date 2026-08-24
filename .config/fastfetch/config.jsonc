@@ -21,45 +21,45 @@
                 {
                         "type": "os",
                         "key": " ",
-                        "keyColor": "#aac7ff",
+                        "keyColor": "#94cdf7",
                         "format": "Arch Linux x86_64"
                 },
                 {
                         "type": "command",
                         "key": " ",
-                        "keyColor": "#aac7ff",
+                        "keyColor": "#94cdf7",
                         "text": "uname -sr | sed 's/-cachyos/-arch1-1/'"
                 },
                 {
                         "type": "packages",
                         "format": "{} (pacman)",
                         "key": " ",
-                        "keyColor": "#aac7ff"
+                        "keyColor": "#94cdf7"
                 },
                 {
                         "type": "shell",
                         "key": " ",
-                        "keyColor": "#aac7ff"
+                        "keyColor": "#94cdf7"
                 },
                 {
                         "type": "terminal",
                         "key": " ",
-                        "keyColor": "#aac7ff"
+                        "keyColor": "#94cdf7"
                 },
                 {
                         "type": "wm",
                         "key": " ",
-                        "keyColor": "#aac7ff"
+                        "keyColor": "#94cdf7"
                 },
                 {
                         "type": "uptime",
                         "key": " ",
-                        "keyColor": "#aac7ff"
+                        "keyColor": "#94cdf7"
                 },
                 {
                         "type": "disk",
                         "key": " ",
-                        "keyColor": "#aac7ff"
+                        "keyColor": "#94cdf7"
                 },
                 "break",
                 "colors",

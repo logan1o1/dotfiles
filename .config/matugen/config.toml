@@ -14,7 +14,7 @@ post_hook = 'source ~/.zshrc'
 
 [templates.nvim]
 input_path = './templates/nvim_colors.lua'
-output_path = '~/dotfiles/.config/nvim/lua/config/matugen_colors.lua'
+output_path = '~/.config/nvim/lua/config/matugen_colors.lua'
 
 [templates.waybar]
 input_path = './templates/colors.css'
@@ -64,6 +64,10 @@ post_hook = 'killall cava'
 input_path = './templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
 post_hook = 'pkill -USR2 btop || true'
+
+[templates.dgop]
+input_path = './templates/colors.json'
+output_path = '~/.config/dgop/colors.json'
 
 [templates.zathura]
 input_path = './templates/zathurarc'

@@ -47,7 +47,7 @@ PanelWindow {
 
     FolderListModel {
         id: folderModel
-        folder: "file://" + configs.wallpaper_path
+        folder: configs.wallpaper_path
         showDirs: false
         nameFilters: ["*.png", "*.jpg"]
         sortField: FolderListModel.Name
@@ -165,7 +165,7 @@ PanelWindow {
                     cache: false
                     smooth: true
 
-                    source: "file://" + configs.cache_path + fileName
+                    source: configs.cache_path + fileName
 
                     // Decode once at the largest size this image will ever be shown at
                     // (the active/zoomed size), rather than tracking the animating
@@ -227,10 +227,10 @@ PanelWindow {
             const big = folderModel.count
 
             switch (event.key) {
-            case Qt.Key_J:
+            case Qt.Key_K:
                 moveSelection(1, 1)
                 break
-            case Qt.Key_K:
+            case Qt.Key_J:
                 moveSelection(-1, 1)
                 break
             case Qt.Key_D:

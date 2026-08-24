@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-
 CONFIG="$1/config.json"
-
-
 
 wallpaper_path=$(jq -r '.wallpaper_path' "$CONFIG")
 cache_path=$(jq -r '.cache_path' "$CONFIG")
