@@ -51,9 +51,9 @@ output_path = '~/.config/starship.toml'
 input_path = './templates/ghostty'
 output_path = '~/.config/ghostty/config.ghostty'
 
-[templates.fastfetch]
-input_path = './templates/fastfetch.jsonc'
-output_path = '~/.config/fastfetch/config.jsonc'
+# [templates.fastfetch]
+# input_path = './templates/fastfetch.jsonc'
+# output_path = '~/.config/fastfetch/config.jsonc'
 
 [templates.cava]
 input_path = './templates/cava-colors.ini'
