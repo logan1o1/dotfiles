@@ -9,6 +9,9 @@ application/x-extension-shtml=userapp-Zen-ZFB8T3.desktop
 application/xhtml+xml=userapp-Zen-ZFB8T3.desktop
 application/x-extension-xhtml=userapp-Zen-ZFB8T3.desktop
 application/x-extension-xht=userapp-Zen-ZFB8T3.desktop
+video/mp4=vlc.desktop
+application/pdf=org.pwmt.zathura.desktop
+application/cbr=org.pwmt.zathura.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Zen-ZFB8T3.desktop;userapp-Zen-GSNPP3.desktop;userapp-Zen-5J2AP3.desktop;

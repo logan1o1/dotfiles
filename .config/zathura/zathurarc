@@ -1,0 +1,25 @@
+# Colors
+set default-bg "#111318"
+set default-fg "#e1e2e9"
+
+set statusbar-bg "#3d4758"
+set statusbar-fg "#d8e3f8"
+
+set inputbar-bg "#553f5d"
+set inputbar-fg "#f7d8ff"
+
+set highlight-color "#224876"
+set highlight-active-color "#a6c8ff"
+
+# Window settings
+set font "Iosevka NF"
+set window-height 1029
+set window-width 973
+# set show-scrollbar "true"
+set selection-clipboard clipboard
+
+# Keymaps
+map K zoom in
+map J zoom out
+map H navigate previous
+map L navigate next

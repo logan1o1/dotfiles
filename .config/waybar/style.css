@@ -47,10 +47,11 @@ window#waybar {
 
 #workspaces button.active:hover {
         background-color: @background;
+        color: @primary;
 }
 
 #workspaces button.urgent {
-        color: #f38ba8;
+        color: @on_tertiary_container;
 }
 
 #network.disconnected {
