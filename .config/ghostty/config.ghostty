@@ -1,11 +1,11 @@
-background = #111318
-foreground = #e1e2e9
-cursor-color = #a6c8ff
-cursor-text = #01315e
-selection-background = #3d4758
-selection-foreground = #d8e3f8
+background = #101418
+foreground = #e0e2e8
+cursor-color = #9ecafc
+cursor-text = #003256
+selection-background = #3b4857
+selection-foreground = #d6e4f7
 
-split-divider-color = #a6c8ff
+split-divider-color = #9ecafc
 
 custom-shader = shaders/cursor_warp.glsl
 

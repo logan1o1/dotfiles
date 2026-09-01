@@ -12,7 +12,7 @@
                 "hyprland/workspaces",
                 // "hyprland/window",
                 "mpris",
-                "custom/media-switcher"
+                "custom/media-switcher",
         ],
         "modules-center": [
                 "clock"
