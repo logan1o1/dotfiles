@@ -1,15 +1,15 @@
 # Colors
-set default-bg "#101418"
-set default-fg "#e0e2e8"
+set default-bg "#101417"
+set default-fg "#e0e3e8"
 
-set statusbar-bg "#3b4857"
-set statusbar-fg "#d6e4f7"
+set statusbar-bg "#384956"
+set statusbar-fg "#d3e5f5"
 
-set inputbar-bg "#514060"
-set inputbar-fg "#f1dbff"
+set inputbar-bg "#4d4162"
+set inputbar-fg "#ebddff"
 
-set highlight-color "#154974"
-set highlight-active-color "#9ecafc"
+set highlight-color "#004b70"
+set highlight-active-color "#96cdf8"
 
 # Window settings
 set font "Iosevka NF"

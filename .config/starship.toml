@@ -45,13 +45,13 @@ vimcmd_symbol = "[❮](bold fg:accent)"
 
 # Matugen dynamically injects Material You colors into these variables
 [palettes.matugen]
-block1_bg = '#154974'
-block1_fg = '#d0e4ff'
-accent    = '#9ecafc'
-accent_fg = '#003256'
-block2_bg = '#42474e'
-block3_bg = '#1d2024'
-block4_bg = '#101418'
+block1_bg = '#004b70'
+block1_fg = '#cae6ff'
+accent    = '#96cdf8'
+accent_fg = '#00344e'
+block2_bg = '#41474d'
+block3_bg = '#1c2024'
+block4_bg = '#101417'
 
 [directory]
 style = "fg:accent_fg bg:accent"
