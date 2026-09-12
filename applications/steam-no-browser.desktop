@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Steam Minigameslist
+Type=Application
+NoDisplay=false
+Exec=steam steam://open/minigameslist -console -no-browser %u
+Icon=/home/lucifer/.steam/steam/clientui/vr/icon_steam_vr.png
+Comment=Custom desktop file for opening steam minigameslist with no browser

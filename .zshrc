@@ -6,8 +6,8 @@ source $ZSH/oh-my-zsh.sh
 # Key binding
 function zvm_after_init() {
     zvm_bindkey viins '^y' autosuggest-accept
-    zvm_bindkey viins '^p' history-search-backward
-    zvm_bindkey viins '^n' history-search-forward
+    zvm_bindkey viins '^p' history-beginning-search-backward
+    zvm_bindkey viins '^n' history-beginning-search-forward
     zvm_bindkey viins '^h' backward-delete-char
 }
 
