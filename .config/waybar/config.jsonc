@@ -24,8 +24,8 @@
                 "memory",
                 "network",
                 "pulseaudio",
-                "battery",
                 // "custom/notification",
+                "battery",
                 "custom/power",
         ],
         "custom/launcher": {
@@ -115,6 +115,7 @@
         },
         "memory": {
                 "format": " {used:0.1f}G",
+                "interval": 1,
         },
         "pulseaudio": {
                 "format": "{icon} {volume}%",
@@ -145,8 +146,8 @@
                 "exec-if": "which swaync-client",
                 "format": "{icon}",
                 "format-icons": {
-                        "none": "󰅺",
-                        "notification": "󰡟",
+                        "none": "",
+                        "notification": "󱅫",
                 },
                 "on-click": "sleep 0.1 && swaync-client -t -sw",
                 "return-type": "json",
