@@ -86,11 +86,12 @@ progress_error  = { fg = "{{colors.error.default.hex}}", bg = "{{colors.surface_
 
 [which]
 cols = 3
-mask = { bg = "{{colors.surface_bright.default.hex}}" }
+mask = { bg = "{{colors.surface.default.hex}}" }
 cand = { fg = "{{colors.primary.default.hex}}" }
-rest = { fg = "{{colors.on_primary.default.hex}}" }
+rest = { fg = "{{colors.tertiary_fixed.default.hex}}" }
 desc = { fg = "{{colors.on_surface.default.hex}}" }
-separator = " ▶ "
+border = { fg = "{{colors.primary.default.hex}}" }
+separator = " ▶  "
 separator_style = { fg = "{{colors.on_surface.default.hex}}" }
 
 # : ]]]

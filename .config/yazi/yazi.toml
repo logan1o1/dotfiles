@@ -1,0 +1,11 @@
+[mgr]
+linemode    = "size"
+show_hidden = true
+sort_by     = "natural"
+# mouse_events = []
+
+[preview]
+wrap       = "yes"
+max_width  = 1500
+max_height = 1500
+
