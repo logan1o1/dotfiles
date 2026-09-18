@@ -3,8 +3,31 @@ desc = "Start bunny.yazi"
 on = ";"
 run = "plugin bunny"
 
-# Optionally, add another keymap to immediately fuzzy search bookmarks
-# [[mgr.prepend_keymap]]
-# desc = "Start bunny.yazi fuzzy search"
-# on = "'"
-# run = "plugin bunny fuzzy"
+[[plugin.prepend_fetchers]]
+url   = "*"
+run   = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+url   = "*/"
+run   = "git"
+group = "git"
+
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
+
+[[mgr.prepend_keymap]]
+on = ["c", "p"]
+run = "plugin convert -- --extension='png'"
+desc = "Convert selected files to PNG"
+
+[[mgr.prepend_keymap]]
+on = ["c", "j"]
+run = "plugin convert -- --extension='jpg'"
+desc = "Convert selected files to JPG"
+
+[[mgr.prepend_keymap]]
+on = ["c", "w"]
+run = "plugin convert -- --extension='webp'"
+desc = "Convert selected files to WebP"

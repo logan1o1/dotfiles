@@ -1,0 +1,7 @@
+[[plugin.deps]]
+use = "atareao/convert"
+rev = "ce060d9"
+hash = "1c0465351f2a344e842f065ab316f265"
+
+[flavor]
+deps = []

@@ -32,6 +32,9 @@ padding = { open = "█", close = "█" }
 
 # : ]]]
 
+[git]
+unstaged = { fg = "{{colors.tertiary_fixed.default.hex}}" }
+deleted  = { fg = "{{colors.error.default.hex}}", bold = true }
 
 # : Tabs [[[
 
@@ -190,14 +193,12 @@ dirs  = [
 	{ name = ".github", text = "", fg = "{{colors.primary.default.hex}}" },
 	{ name = ".npm", text = "", fg = "{{colors.primary.default.hex}}" },
 	{ name = "Desktop", text = "", fg = "{{colors.primary.default.hex}}" },
-	{ name = "Development", text = "", fg = "{{colors.primary.default.hex}}" },
 	{ name = "Documents", text = "", fg = "{{colors.primary.default.hex}}" },
 	{ name = "Downloads", text = "", fg = "{{colors.primary.default.hex}}" },
 	{ name = "Library", text = "", fg = "{{colors.primary.default.hex}}" },
 	{ name = "Movies", text = "", fg = "{{colors.primary.default.hex}}" },
 	{ name = "Music", text = "", fg = "{{colors.primary.default.hex}}" },
 	{ name = "Pictures", text = "", fg = "{{colors.primary.default.hex}}" },
-	{ name = "Public", text = "", fg = "{{colors.primary.default.hex}}" },
 	{ name = "Videos", text = "", fg = "{{colors.primary.default.hex}}" },
 ]
 files = [
