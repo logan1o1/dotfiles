@@ -1,0 +1,13 @@
+@define-color background {{background}};
+@define-color foreground {{foreground}};
+
+/* Map to Matugen-style semantic tokens using Wallust's pastel/bright slots */
+@define-color primary {{color12}};       /* Bright blue -> yields a soft pastel blue like Matugen's #a4c9fe */
+@define-color secondary {{color14}};     /* Bright cyan/blue variant */
+@define-color tertiary {{color13}};      /* Bright magenta/purple -> yields lavender like Matugen's #d9bde3 */
+@define-color surface {{color0}};        /* ANSI black slot for structured dark surfaces */
+
+@define-color accent {{color12}};
+@define-color urgent {{color9}};
+@define-color muted {{color8}};
+@define-color highlight {{color6}};

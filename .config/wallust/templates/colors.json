@@ -1,0 +1,49 @@
+{
+  "ui": {
+    "border_primary": "{{color1 | lighten(0.30)}}",
+    "border_secondary": "{{color2 | lighten(0.25)}}",
+    "header_background": "{{color1 | darken(0.55)}}",
+    "header_text": "{{foreground}}",
+    "footer_background": "{{background | lighten(0.08)}}",
+    "footer_text": "{{foreground | darken(0.20)}}",
+    "text_primary": "{{foreground}}",
+    "text_secondary": "{{foreground | darken(0.20)}}",
+    "text_accent": "{{color1 | lighten(0.30)}}",
+    "selection_background": "{{color1 | lighten(0.30)}}",
+    "selection_text": "{{background}}"
+  },
+  "charts": {
+    "network_download": "{{color1 | lighten(0.30)}}",
+    "network_upload": "{{color2 | lighten(0.25)}}",
+    "network_line": "{{color3 | lighten(0.25)}}",
+    "cpu_core_low": "{{color1 | lighten(0.15)}}",
+    "cpu_core_medium": "{{color1 | lighten(0.30)}}",
+    "cpu_core_high": "{{color3 | lighten(0.25)}}",
+    "disk_read": "{{color1 | lighten(0.30)}}",
+    "disk_write": "{{color2 | lighten(0.25)}}"
+  },
+  "progress_bars": {
+    "memory_low": "{{color1 | lighten(0.15)}}",
+    "memory_medium": "{{color1 | lighten(0.30)}}",
+    "memory_high": "{{color3 | lighten(0.25)}}",
+    "disk_low": "{{color1 | lighten(0.15)}}",
+    "disk_medium": "{{color1 | lighten(0.30)}}",
+    "disk_high": "{{color3 | lighten(0.25)}}",
+    "cpu_low": "{{color1 | lighten(0.15)}}",
+    "cpu_medium": "{{color1 | lighten(0.30)}}",
+    "cpu_high": "{{color3 | lighten(0.25)}}",
+    "progress_background": "{{background | lighten(0.08)}}"
+  },
+  "temperature": {
+    "cold": "{{color1 | lighten(0.15)}}",
+    "warm": "{{color1 | lighten(0.30)}}",
+    "hot": "{{color3 | lighten(0.25)}}",
+    "danger": "{{color9}}"
+  },
+  "status": {
+    "success": "#22C55E",
+    "warning": "#F59E0B",
+    "error": "{{color9}}",
+    "info": "#3B82F6"
+  }
+}

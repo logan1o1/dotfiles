@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Opencode
+Type=Application
+NoDisplay=false
+Exec=opencode %u
+Terminal=true
+Icon=/home/lucifer/dotfiles/icons/opencode-logo.png
+Comment=Custom definition for Opencode

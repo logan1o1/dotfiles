@@ -1,0 +1,77 @@
+# full - resized - wal - thumb -  fastresize - kmeans
+backend = "kmeans"
+
+# lab - labmixed - lch - lchmixed
+color_space = "lchmixed"
+
+# dark - dark16 - darkcomp - darkcomp16
+# light - light16 - lightcomp - lightcomp16
+# harddark - harddark16 - harddarkcomp - harddarkcomp16
+# softdark - softdark16 - softdarkcomp - softdarkcomp16
+# softlight - softlight16 - softlightcomp - softlightcomp16
+palette = "softdark16"
+
+check_contrast = true
+
+saturation = 60
+
+# Alpha value for templating, by default 100 (no other use whatsoever)
+#alpha = 100
+
+[templates]
+# NOTE: prefer '' over "" for paths, avoids escaping.
+# template: A RELATIVE path that points to `~/.config/wallust/template` (depends on platform)
+# target: ABSOLUTE path in which to place a file with generated templated values.
+# ¡ If either one is a directory, then both SHOULD be one. !
+# zathura = { template = 'zathura', target = '~/.config/zathura/zathurarc' }
+
+
+
+hyprland.template = 'colors.lua'
+hyprland.target = '~/.config/hypr/hyprland-colors.lua'
+
+nvim.template = 'nvim_colors.lua'
+nvim.target = '~/.config/nvim/lua/plugins/wallust_colors.lua'
+
+zsh.template = 'zsh-colors.zsh'
+zsh.target = '~/.cache/matugen-zsh-colors.zsh'
+
+ghostty.template = 'ghostty'
+ghostty.target = '~/.config/ghostty/config.ghostty'
+
+waybar.template = 'colors.css'
+waybar.target = '~/.config/waybar/colors.css'
+
+wofi.template = 'colors.css'
+wofi.target = '~/.config/wofi/colors.css'
+
+waypaper.template = 'colors.css'
+waypaper.target = '~/.config/waypaper/colors.css'
+
+starship.template = 'starship-colors.toml'
+starship.target = '~/.config/starship.toml'
+
+yazi.template = 'yazi-theme.toml'
+yazi.target = '~/.config/yazi/theme.toml'
+
+zathura.template = 'zathurarc'
+zathura.target = '~/.config/zathura/zathurarc'
+
+dgop.template = 'colors.json'
+dgop.target = '~/.config/dgop/colors.json'
+
+[hooks]
+zsh = "exec source ~/.zshrc"
+
+# ~ Style ~
+# dark (default) - dark background, light foreground
+# light          - light background, dark foreground
+#style = "dark"
+
+# [templated_hooks]
+# Like [hooks] but the command is rendered as a Jinja2 template first, giving
+# access to the same variables as templates: colors, wallpaper, palette, etc.
+# Skip all with --no-templated-hooks.
+# Examples:
+#notify = "notify-send 'wallust' 'Generated from {{wallpaper | basename}} ({{palette}})'"
+#waybar = "echo '#{background}' > /tmp/wallust-bg"

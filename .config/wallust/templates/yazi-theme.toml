@@ -1,0 +1,923 @@
+# : Manager [[[
+
+[mgr]
+cwd = { fg = "{{foreground}}" }
+
+# Find
+find_keyword  = { fg = "{{color9}}", bold = true, italic = true, underline = true }
+find_position = { fg = "{{color9}}", bold = true, italic = true }
+
+# Marker
+marker_copied   = { fg = "{{color3 | darken(0.65)}}", bg = "{{color3 | darken(0.65)}}" }
+marker_cut      = { fg = "{{color3 | lighten(0.25)}}", bg = "{{color3 | lighten(0.25)}}" }
+marker_marked   = { fg = "{{color9}}", bg = "{{color9}}" }
+marker_selected = { fg = "{{color3 | lighten(0.25)}}", bg = "{{color3 | lighten(0.25)}}" }
+
+# Count
+count_copied   = { fg = "{{background}}", bg = "{{color3 | lighten(0.25)}}" }
+count_cut      = { fg = "{{background}}", bg = "{{color3 | lighten(0.25)}}" }
+count_selected = { fg = "{{background}}", bg = "{{color3 | lighten(0.25)}}" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "{{background | lighten(0.35)}}" }
+
+# : ]]]
+
+
+# : Indicator [[[
+
+[indicator]
+padding = { open = "█", close = "█" }
+
+# : ]]]
+
+[git]
+unstaged = { fg = "{{color3 | lighten(0.25)}}" }
+deleted  = { fg = "{{color9}}", bold = true }
+
+# : Tabs [[[
+
+[tabs]
+active    = { fg = "{{color1 | lighten(0.30)}}", bold = true, bg = "{{background}}" }
+inactive  = { fg = "{{color2 | lighten(0.25)}}", bg = "{{background}}" }
+sep_inner = { open = "[", close = "]" }
+
+# : ]]]
+
+
+# : Mode [[[
+
+[mode]
+# Mode
+normal_main = { bg = "{{color1 | lighten(0.30)}}", fg = "{{background}}", bold = true }
+normal_alt  = { bg = "{{background | lighten(0.18)}}", fg = "{{foreground | darken(0.20)}}" }
+
+# Select mode
+select_main = { bg = "{{color2 | lighten(0.25)}}", fg = "{{background}}", bold = true }
+select_alt  = { bg = "{{background | lighten(0.18)}}", fg = "{{foreground | darken(0.20)}}" }
+
+# Unset mode
+unset_main = { bg = "{{color3 | lighten(0.25)}}", fg = "{{background}}", bold = true }
+unset_alt  = { bg = "{{background | lighten(0.18)}}", fg = "{{foreground | darken(0.20)}}" }
+
+# : ]]]
+
+
+# : Status [[[
+
+[status]
+sep_left  = { open = "🭁", close = "🭠" }
+sep_right = { open = "🭁", close = "🭠" }
+
+# Permissions
+perm_type  = { fg = "{{color2 | darken(0.55)}}" }
+perm_write = { fg = "{{color3 | darken(0.55)}}" }
+perm_read  = { fg = "{{color9 | darken(0.55)}}" }
+perm_exec  = { fg = "{{color3 | darken(0.55)}}" }
+perm_sep   = { fg = "{{color1 | darken(0.55)}}" }
+
+# Progress
+progress_label  = { bold = true }
+progress_normal = { fg = "{{color1 | lighten(0.30)}}", bg = "{{background | lighten(0.26)}}" }
+progress_error  = { fg = "{{color9}}", bg = "{{background | lighten(0.26)}}" }
+
+# : ]]]
+
+
+# : Which [[[
+
+[which]
+cols = 3
+mask = { bg = "{{background}}" }
+cand = { fg = "{{color1 | lighten(0.30)}}" }
+rest = { fg = "{{color3 | lighten(0.25)}}" }
+desc = { fg = "{{foreground}}" }
+border = { fg = "{{color1 | lighten(0.30)}}" }
+separator = " ▶  "
+separator_style = { fg = "{{foreground}}" }
+
+# : ]]]
+
+
+# : Notify [[[
+
+[notify]
+title_info  = { fg = "{{color3 | lighten(0.25)}}" }
+title_warn  = { fg = "{{color1 | lighten(0.30)}}" }
+title_error = { fg = "{{color9}}" }
+
+# : ]]]
+
+
+# : Picker [[[
+
+[pick]
+border = { fg = "{{color1 | lighten(0.30)}}" }
+active = { fg = "{{color3 | lighten(0.25)}}", bold = true }
+inactive = {}
+
+# : ]]]
+
+
+# : Input [[[
+
+[input]
+border = { fg = "{{color1 | lighten(0.30)}}" }
+value  = { fg = "{{foreground}}" }
+
+# : ]]]
+
+
+# : Completion [[[
+
+[cmp]
+border = { fg = "{{color1 | lighten(0.30)}}", bg = "{{background}}" }
+
+# : ]]]
+
+
+# : Tasks [[[
+
+[tasks]
+border  = { fg = "{{color1 | lighten(0.30)}}" }
+title   = {}
+hovered = { fg = "{{color3 | lighten(0.25)}}", underline = true }
+
+# : ]]]
+
+
+# : Help [[[
+
+[help]
+on     = { fg = "{{foreground}}" }
+run    = { fg = "{{foreground}}" }
+footer = { fg = "{{background}}", bg = "{{color2 | lighten(0.25)}}" }
+
+# : ]]]
+
+
+# : File-specific styles [[[
+
+[filetype]
+
+rules = [
+    # Images
+    { mime = "image/*", fg = "#94e2d5" },
+
+    # Media
+    { mime = "{audio,video}/*", fg = "#f9e2af" },
+
+    # Archives
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#f5c2e7" },
+
+    # Documents
+    { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
+
+    # Special files
+    { url = "*", is = "orphan", bg = "{{color9 | darken(0.60)}}" },
+    { url = "*", is = "exec", fg = "{{color9}}" },
+
+    # Fallback
+    { url = "*", fg = "{{foreground}}" },
+    { url = "*/", fg = "{{background | lighten(0.35)}}" },
+]
+
+# : ]]]
+
+[icon]
+globs = []
+dirs  = [
+	{ name = ".config", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".git", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".github", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".npm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Desktop", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Documents", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Downloads", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Library", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Movies", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Music", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Pictures", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Videos", text = "", fg = "{{color1 | lighten(0.30)}}" },
+]
+files = [
+	{ name = ".babelrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".bash_profile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".bashrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".clang-format", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".clang-tidy", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".codespellrc", text = "󰓆", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".condarc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".dockerignore", text = "󰡨", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".ds_store", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".editorconfig", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".env", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".eslintignore", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".eslintrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".git-blame-ignore-revs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".gitattributes", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".gitconfig", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".gitignore", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".gitlab-ci.yml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".gitmodules", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".gtkrc-2.0", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".gvimrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".justfile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".luacheckrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".luaurc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".mailmap", text = "󰊢", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".nanorc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".npmignore", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".npmrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".nuxtrc", text = "󱄆", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".nvmrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".pnpmfile.cjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".pre-commit-config.yaml", text = "󰛢", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".prettierignore", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".prettierrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".prettierrc.cjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".prettierrc.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".prettierrc.json", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".prettierrc.json5", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".prettierrc.mjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".prettierrc.toml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".prettierrc.yaml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".prettierrc.yml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".pylintrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".settings.json", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".SRCINFO", text = "󰣇", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".vimrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".Xauthority", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".xinitrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".Xresources", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".xsession", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".zprofile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".zshenv", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = ".zshrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "_gvimrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "_vimrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "AUTHORS", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "AUTHORS.txt", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "brewfile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bspwmrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "build", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "build.gradle", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "build.zig.zon", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bun.lock", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bun.lockb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cantorrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "checkhealth", text = "󰓙", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cmakelists.txt", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "code_of_conduct", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "code_of_conduct.md", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "commit_editmsg", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "commitlint.config.js", text = "󰜘", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "commitlint.config.ts", text = "󰜘", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "compose.yaml", text = "󰡨", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "compose.yml", text = "󰡨", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "config", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "containerfile", text = "󰡨", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "copying", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "copying.lesser", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Directory.Build.props", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Directory.Build.targets", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Directory.Packages.props", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "docker-compose.yaml", text = "󰡨", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "docker-compose.yml", text = "󰡨", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "dockerfile", text = "󰡨", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "eslint.config.cjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "eslint.config.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "eslint.config.mjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "eslint.config.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ext_typoscript_setup.txt", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "favicon.ico", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fp-info-cache", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fp-lib-table", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "FreeCAD.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Gemfile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gnumakefile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "go.mod", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "go.sum", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "go.work", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gradle-wrapper.properties", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gradle.properties", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gradlew", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "groovy", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gruntfile.babel.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gruntfile.coffee", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gruntfile.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gruntfile.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gtkrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gulpfile.babel.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gulpfile.coffee", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gulpfile.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gulpfile.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hypridle.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hyprland.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hyprlandd.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hyprlock.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hyprpaper.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hyprsunset.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "i18n.config.js", text = "󰗊", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "i18n.config.ts", text = "󰗊", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "i3blocks.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "i3status.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "index.theme", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ionic.config.json", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Jenkinsfile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "justfile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kalgebrarc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kdeglobals", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kdenlive-layoutsrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kdenliverc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kritadisplayrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kritarc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "license", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "license.md", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "lxde-rc.xml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "lxqt.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "makefile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mix.lock", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mpv.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "next.config.cjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "next.config.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "next.config.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "node_modules", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "nuxt.config.cjs", text = "󱄆", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "nuxt.config.js", text = "󱄆", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "nuxt.config.mjs", text = "󱄆", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "nuxt.config.ts", text = "󱄆", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "package-lock.json", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "package.json", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "PKGBUILD", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "platformio.ini", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "playwright.config.cjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "playwright.config.cts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "playwright.config.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "playwright.config.mjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "playwright.config.mts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "playwright.config.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pnpm-lock.yaml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pnpm-workspace.yaml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pom.xml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "prettier.config.cjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "prettier.config.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "prettier.config.mjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "prettier.config.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "prisma.config.mts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "prisma.config.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "procfile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "PrusaSlicer.ini", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "PrusaSlicerGcodeViewer.ini", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "py.typed", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "QtProject.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rakefile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "readme", text = "󰂺", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "readme.md", text = "󰂺", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rmd", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "robots.txt", text = "󰚩", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "security", text = "󰒃", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "security.md", text = "󰒃", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "settings.gradle", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "svelte.config.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sxhkdrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sym-lib-table", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tailwind.config.js", text = "󱏿", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tailwind.config.mjs", text = "󱏿", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tailwind.config.ts", text = "󱏿", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tmux.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tmux.conf.local", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tsconfig.json", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "unlicense", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vagrantfile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vercel.json", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vite.config.cjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vite.config.cts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vite.config.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vite.config.mjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vite.config.mts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vite.config.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vitest.config.cjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vitest.config.cts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vitest.config.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vitest.config.mjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vitest.config.mts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vitest.config.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vlcrc", text = "󰕼", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "webpack", text = "󰜫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "weston.ini", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "workspace", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "wrangler.jsonc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "wrangler.toml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xdph.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xmobarrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xmobarrc.hs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xmonad.hs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xorg.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xsettingsd.conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+]
+exts = [
+	{ name = "3gp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "3mf", text = "󰆧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "7z", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "a", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "aac", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ada", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "adb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ads", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ai", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "aif", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "aiff", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "android", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ape", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "apk", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "apl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "app", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "applescript", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "asc", text = "󰦝", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "asm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ass", text = "󰨖", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "astro", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "avif", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "awk", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "azcli", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bak", text = "󰁯", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bash", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bat", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bazel", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bib", text = "󱉟", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bicep", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bicepparam", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bin", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "blade.php", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "blend", text = "󰂫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "blp", text = "󰺾", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bmp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bqn", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "brep", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bz", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bz2", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bz3", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "bzl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "c", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "c++", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cache", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cast", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cbl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ccm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cfc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cfg", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cfm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "clj", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cljc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cljd", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cljs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cmake", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cob", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cobol", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "coffee", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "conda", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "conf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "config.ru", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cow", text = "󰆚", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cpp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cppm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cpy", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cr", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "crdownload", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cs", text = "󰌛", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "csh", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cshtml", text = "󱦗", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cson", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "csproj", text = "󰪮", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "css", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "csv", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cu", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cue", text = "󰲹", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cuh", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cxx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "cxxm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "d", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "d.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "dart", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "db", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "dconf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "desktop", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "diff", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "dll", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "doc", text = "󰈬", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "Dockerfile", text = "󰡨", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "dockerignore", text = "󰡨", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "docx", text = "󰈬", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "dot", text = "󱁉", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "download", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "drl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "dropbox", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "dump", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "dwg", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "dxf", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ebook", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ebuild", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "edn", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "eex", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ejs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "el", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "elc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "elf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "elm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "eln", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "env", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "eot", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "epp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "epub", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "erb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "erl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ex", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "exe", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "exs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "f#", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "f3d", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "f90", text = "󱈚", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fbx", text = "󰆧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fcbak", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fcmacro", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fcmat", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fcparam", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fcscript", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fcstd", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fcstd1", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fctb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fctl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fdmdownload", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "feature", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fish", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "flac", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "flc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "flf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fnl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fodg", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fodp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fods", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fodt", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "frag", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fsi", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fsscript", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "fsx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gcode", text = "󰐫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gd", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gemspec", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "geom", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gif", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "git", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "glb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gleam", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "glsl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gnumakefile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "go", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "godot", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gpr", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gql", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gradle", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "graphql", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gresource", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gv", text = "󱁉", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "gz", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "h", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "haml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hbs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "heex", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hex", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hh", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hpp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hrl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "htm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "html", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "http", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "huff", text = "󰡘", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hurl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "hxx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ical", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "icalendar", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ico", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ics", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ifb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ifc", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ige", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "iges", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "igs", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "image", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "img", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "import", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "info", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ini", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ino", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ipynb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "iso", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ixx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "jar", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "java", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "jl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "jpeg", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "jpg", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "json", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "json5", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "jsonc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "jsx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "jwmrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "jxl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kbx", text = "󰯄", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kdb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kdbx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kdenlive", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kdenlivetitle", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kicad_dru", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kicad_mod", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kicad_pcb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kicad_prl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kicad_pro", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kicad_sch", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kicad_sym", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kicad_wks", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ko", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kpp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kra", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "krz", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ksh", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kt", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "kts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "lck", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "leex", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "less", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "lff", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "lhs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "lib", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "license", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "liquid", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "lock", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "log", text = "󰌱", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "lrc", text = "󰨖", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "lua", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "luac", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "luau", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "m", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "m3u", text = "󰲹", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "m3u8", text = "󰲹", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "m4a", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "m4v", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "magnet", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "makefile", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "markdown", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "material", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "md", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "md5", text = "󰕥", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mdx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mint", text = "󰌪", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mk", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mkv", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mli", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mo", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mobi", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mojo", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mov", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mp3", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mp4", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mpp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "msf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "mustache", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "nfo", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "nim", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "nix", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "norg", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "nswag", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "nu", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "o", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "obj", text = "󰆧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "odf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "odg", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "odin", text = "󰟢", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "odp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ods", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "odt", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "oga", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ogg", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ogv", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ogx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "opus", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "org", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "otf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "out", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "part", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "patch", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pck", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pcm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pdf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "php", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pls", text = "󰲹", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ply", text = "󰆧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "png", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "po", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pot", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ppt", text = "󰈧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pptx", text = "󰈧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "prisma", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pro", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ps1", text = "󰨊", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "psb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "psd", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "psd1", text = "󰨊", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "psm1", text = "󰨊", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pub", text = "󰷖", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pxd", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pxi", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "py", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pyc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pyd", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pyi", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pyo", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pyw", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "pyx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "qm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "qml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "qrc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "qss", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "query", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "R", text = "󰟔", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "r", text = "󰟔", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rake", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rar", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rasi", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "razor", text = "󱦘", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rb", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "res", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "resi", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rlib", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rmd", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rproj", text = "󰗆", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "rss", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "s", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sass", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sbt", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "scad", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "scala", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "scm", text = "󰘧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "scss", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sh", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sha1", text = "󰕥", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sha224", text = "󰕥", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sha256", text = "󰕥", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sha384", text = "󰕥", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sha512", text = "󰕥", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sig", text = "󰘧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "signature", text = "󰘧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "skp", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sldasm", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sldprt", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "slim", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sln", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "slnx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "slvs", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sml", text = "󰘧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "so", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sol", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "spec.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "spec.jsx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "spec.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "spec.tsx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "spx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sql", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sqlite", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sqlite3", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "srt", text = "󰨖", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ssa", text = "󰨖", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ste", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "step", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "stl", text = "󰆧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "stories.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "stories.jsx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "stories.mjs", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "stories.svelte", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "stories.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "stories.tsx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "stories.vue", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "stp", text = "󰻫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "strings", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "styl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sub", text = "󰨖", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sublime", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "suo", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "sv", text = "󰍛", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "svelte", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "svg", text = "󰜡", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "svgz", text = "󰜡", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "svh", text = "󰍛", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "swift", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "t", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tbc", text = "󰛓", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tcl", text = "󰛓", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "templ", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "terminal", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "test.js", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "test.jsx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "test.ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "test.tsx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tex", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tfvars", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tgz", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tmpl", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tmux", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "toml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "torrent", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tres", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ts", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tscn", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tsconfig", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "tsx", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ttf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "twig", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "txt", text = "󰈙", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "txz", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "typ", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "typoscript", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "ui", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "v", text = "󰍛", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vala", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vert", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vh", text = "󰍛", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vhd", text = "󰍛", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vhdl", text = "󰍛", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vi", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vim", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vsh", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vsix", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "vue", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "wasm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "wav", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "webm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "webmanifest", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "webp", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "webpack", text = "󰜫", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "wma", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "wmv", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "woff", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "woff2", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "wrl", text = "󰆧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "wrz", text = "󰆧", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "wv", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "wvc", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "x", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xaml", text = "󰙳", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xcf", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xcplayground", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xcstrings", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xls", text = "󰈛", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xlsx", text = "󰈛", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xm", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xml", text = "󰗀", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xpi", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xslt", text = "󰗀", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xul", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "xz", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "yaml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "yml", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "zig", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "zip", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "zsh", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "zst", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ name = "🔥", text = "", fg = "{{color1 | lighten(0.30)}}" },
+]
+conds = [
+	# Special files
+	{ if = "orphan", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ if = "link", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ if = "block", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ if = "char", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ if = "fifo", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ if = "sock", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ if = "sticky", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ if = "dummy", text = "", fg = "{{color1 | lighten(0.30)}}" },
+
+	# Fallback
+	{ if = "dir", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ if = "exec", text = "", fg = "{{color1 | lighten(0.30)}}" },
+	{ if = "!dir", text = "", fg = "{{color1 | lighten(0.30)}}" },
+]
+# : }}}

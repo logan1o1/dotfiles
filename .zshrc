@@ -55,11 +55,12 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 export PATH="$PATH:~/.spicetify"
 export PATH="$PATH:/home/lucifer/.local/bin"
 export LS_COLORS="di=1;34:ln=1;36:so=1;35:pi=1;33:ex=1;32:bd=1;33;40:cd=1;33;40:su=37;41:sg=30;43:tw=30;42:ow=1;34"
+export _ZO_EXCLUDE_DIRS="/home/lucifer/built_from_source/awww"
 
 # Aliases
 alias cd='z'
 alias ff='fastfetch'
-
+alias vi='nvim'
 # Initialization
 eval "$(starship init zsh)"
 eval "$(rbenv init -)"

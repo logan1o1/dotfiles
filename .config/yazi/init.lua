@@ -4,6 +4,7 @@ require("bunny"):setup({
     { key = "t",          path = "/tmp",                                 },
     { key = "~",          path = "~",              desc = "Home"         },
     { key = "m",          path = "~/Music",        desc = "Music"        },
+    { key = "M",          path = "~/Videos/movies/",        desc = "Movies"        },
     { key = "p",          path = "~/projects/",    desc = "Projects"     },
     { key = "d",          path = "~/dotfiles/.config",      desc = "Dotfiles" },
     { key = "w",          path = "~/wallpapers/",  desc = "Wallpapers"   },
