@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Raddbg
+Type=Application
+NoDisplay=false
+Exec=raddbg %u
+Icon=/home/lucifer/dotfiles/icons/rad.jpg
+Comment=Custom definition for rad debugger
