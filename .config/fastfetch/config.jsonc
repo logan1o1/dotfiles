@@ -61,6 +61,11 @@
                         "key": " ",
                         "keyColor": "#94cdf7"
                 },
+                {
+                        "type": "cpu",
+                        "key": " ",
+                        "keyColor": "#94cdf7"
+                },
                 "break",
                 "colors",
                 "break",

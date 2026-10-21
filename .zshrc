@@ -60,7 +60,7 @@ export _ZO_EXCLUDE_DIRS="/home/lucifer/built_from_source/awww"
 # Aliases
 alias cd='z'
 alias ff='fastfetch'
-alias vi='nvim'
+
 # Initialization
 eval "$(starship init zsh)"
 eval "$(rbenv init -)"
@@ -79,5 +79,6 @@ if [[ -f ~/.cache/matugen-zsh-colors.zsh ]]; then
     source ~/.cache/matugen-zsh-colors.zsh
 fi
 
+# ssh key initialization
 ssh-add ~/.ssh/github_key > /dev/null 2>&1
 ssh-add ~/.ssh/codeberg_key > /dev/null 2>&1
