@@ -11,9 +11,11 @@ custom-shader = shaders/cursor_warp.glsl
 
 shell-integration = "zsh"
 
-font-family = "Iosevka NF"
+font-family = "IosevkaTermSlab Nerd Font Mono"
 
 copy-on-select = true
+
+confirm-close-surface = false
 
 keybind = ctrl+shift+k=scroll_page_up
 keybind = ctrl+shift+j=scroll_page_down

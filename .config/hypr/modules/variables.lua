@@ -1,5 +1,5 @@
 Variables = {
-        terminal = "ghostty",
+        terminal = "footclient",
         fileManager = "dolphin",
         wallpaper = "waypaper",
         menu = "wofi --show drun",

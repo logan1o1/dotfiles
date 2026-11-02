@@ -12,6 +12,7 @@ application/x-extension-xht=librewolf.desktop
 video/mp4=vlc.desktop
 application/pdf=org.pwmt.zathura.desktop
 application/cbr=org.pwmt.zathura.desktop
+x-scheme-handler/terminal=foot.desktop
 
 [Added Associations]
 x-scheme-handler/http=librewolf.desktop;userapp-Zen-ZFB8T3.desktop;userapp-Zen-GSNPP3.desktop;userapp-Zen-5J2AP3.desktop;

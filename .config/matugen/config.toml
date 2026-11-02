@@ -51,6 +51,10 @@ output_path = '~/.config/starship.toml'
 input_path = './templates/ghostty'
 output_path = '~/.config/ghostty/config.ghostty'
 
+[templates.foot]
+input_path = './templates/foot.ini'
+output_path = '~/.config/foot/foot.ini'
+
 # [templates.fastfetch]
 # input_path = './templates/fastfetch.jsonc'
 # output_path = '~/.config/fastfetch/config.jsonc'

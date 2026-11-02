@@ -43,7 +43,7 @@
                 "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
                 "tooltip-format-disconnected": "disconnected",
                 "max-length": 50,
-                "on-click": "ghostty --title=wifitui -e wifitui",
+                "on-click": "footclient --title=wifitui -e wifitui",
                 "interval": 5,
         },
         "custom/spotify": {

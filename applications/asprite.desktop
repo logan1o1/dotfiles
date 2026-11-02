@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=asprite
+Type=Application
+NoDisplay=false
+Exec=asprite %u
+Icon=/home/lucifer/dotfiles/icons/ase128.png
+Comment=Custom definition for asprite

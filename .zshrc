@@ -42,6 +42,7 @@ fi
 
 # Paths
 export AUTH_CLIENT_ID=a765f971fbe94ccb9ba7b7c2d5d5e7bd
+export TERMINAL=foot
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$HOME/.rbenv/bin:$PATH"
