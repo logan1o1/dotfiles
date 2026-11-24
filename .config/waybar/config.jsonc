@@ -79,11 +79,11 @@
                 }
         },
         "hyprland/window": {
-                "format": "{title}",
+                "format": "{title}"
         },
         "tray": {
                 "show-passive-items": true,
-                "spacing": 10,
+                "spacing": 10
         },
         "clock": {
                 "format": " {:%I:%M %p - %a %d %b}",
@@ -135,10 +135,10 @@
                 "tooltip": false,
         },
         "custom/power": {
-                "tooltip": false,
+                "format": "⏻",
+                "tooltip": true,
                 "on-click": "wlogout -p layer-shell &",
                 // "on-click": "~/.config/rofi/powermenu/type-2/powermenu.sh &",
-                "format": "⏻",
         },
         "custom/notification": {
                 "escape": true,
@@ -181,12 +181,12 @@
                                 "󰁹"
                         ]
                 },
-                // "format-full": " pluged-in",
+                "tooltip": true,
                 "interval": 5,
                 "states": {
                         "warning": 20,
                         "critical": 10
                 },
-                "tooltip": false
+                // "format-full": " pluged-in",
         },
 }

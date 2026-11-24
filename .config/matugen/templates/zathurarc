@@ -12,14 +12,26 @@ set highlight-color "{{colors.primary_container.default.hex}}"
 set highlight-active-color "{{colors.primary.default.hex}}"
 
 # Window settings
+set smooth-scroll "true"
+set show-scrollbar "true"
 set font "Iosevka NF"
-set window-height 1029
-set window-width 973
-# set show-scrollbar "true"
+# set window-height 1029
+# set window-width 973
 set selection-clipboard clipboard
+set database "sqlite"
+set adjust-open "best-fit"
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+set pages-per-row 1
+set render-loading "false"
+set scroll-step 50
 
 # Keymaps
 map K zoom in
 map J zoom out
 map H navigate previous
 map L navigate next
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
